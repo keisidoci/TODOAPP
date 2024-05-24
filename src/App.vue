@@ -16,12 +16,12 @@ const addTodo = () => {
     return;
   }
   todos.value.push({
-		content: input_content.value,
-		category: input_category.value,
-		done: false,
-		editable: false,
-		createdAt: new Date().getTime()
-	})
+    content: input_content.value,
+    category: input_category.value,
+    done: false,
+    editable: false,
+    createdAt: new Date().getTime(),
+  });
 };
 
 const removeTodo = (todo) => {
@@ -49,7 +49,13 @@ onMounted(() => {
   <main class="app">
     <section class="greetings">
       <h2 class="title">
-        Hello, <input type="text" placeholder="your name" v-model="name" class="title-name" />
+        Hello,
+        <input
+          type="text"
+          placeholder="your name"
+          v-model="name"
+          class="title-name"
+        />
       </h2>
     </section>
     <section class="create-todo">
@@ -95,10 +101,15 @@ onMounted(() => {
           :key="todo.createdAt"
           :class="`todo-item ${todo.done && 'done'}`"
         >
-          <label for="">
-            <input type="checkbox" v-model="todo.done" />
+          <label :for="'checkbox-' + todo.createdAt">
+            <input
+              type="checkbox"
+              :id="'checkbox-' + todo.createdAt"
+              v-model="todo.done"
+            />
             <span :class="`bubble ${todo.category}`"></span>
           </label>
+
           <div class="todo-content">
             <input type="text" v-model="todo.content" />
           </div>

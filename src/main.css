@@ -1,6 +1,7 @@
 :root {
   --primary: #ea40a4;
   --business: #3a82ee;
+  --other: #22cf5b;
   --personal: var(--primary);
   --light: #eee;
   --grey: #888;
@@ -11,6 +12,7 @@
 
   --business-glow: 0px 0px 4px rgba(58, 130, 238, 0.75);
   --personal-glow: 0px 0px 4px rgba(234, 64, 164, 0.75);
+  --other-glow: 0px 0px 4px rgba(34, 207, 91, 0.75);
 }
 
 * {
@@ -22,7 +24,6 @@
 
 input:not([type="radio"]):not([type="checkbox"]),
 button {
- 
   border: none;
   background: none;
   color: inherit;
@@ -69,15 +70,15 @@ h4 {
 .greeting .title,
 .greeting .title input {
   color: var(--dark);
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 700;
 }
 
 .create-todo input[type="text"] {
   display: block;
   width: 100%;
-  font-size: 1.125rem;
-  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  padding: 1rem;
   color: var(--dark);
   background-color: #fff;
   border-radius: 0.5rem;
@@ -87,7 +88,7 @@ h4 {
 
 .create-todo .options {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 1rem;
   margin-bottom: 1.5rem;
 }
@@ -124,6 +125,10 @@ input[type="checkbox"] {
   border-color: var(--personal);
   box-shadow: var(--personal-glow);
 }
+.bubble.other {
+  border-color: var(--other);
+  box-shadow: var(--other-glow);
+}
 
 .bubble::after {
   content: "";
@@ -141,6 +146,10 @@ input[type="checkbox"] {
   background-color: var(--personal);
   box-shadow: var(--personal-glow);
 }
+.bubble.other::after {
+  background-color: var(--other);
+  box-shadow: var(--other-glow);
+}
 
 input:checked ~ .bubble::after {
   width: 10px;
@@ -150,15 +159,15 @@ input:checked ~ .bubble::after {
 
 .create-todo .options label div {
   color: var(--dark);
-  font-size: 1.125rem;
+  font-size: 1rem;
   margin-top: 1rem;
 }
 
 .create-todo input[type="submit"] {
   display: block;
   width: 100%;
-  font-size: 1.125rem;
-  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  padding: 1rem;
   color: #fff;
   background-color: var(--primary);
   border-radius: 0.5rem;
@@ -197,7 +206,7 @@ input:checked ~ .bubble::after {
 
 .todo-item .todo-content input {
   color: var(--dark);
-  font-size: 1.125rem;
+  font-size: 1rem;
 }
 
 .todo-item .actions {

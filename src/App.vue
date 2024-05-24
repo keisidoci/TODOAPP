@@ -46,16 +46,12 @@ onMounted(() => {
 </script>
 
 <template>
+  <button @click="$auth.loginWithPopup()">Login with Auth0</button>
   <main class="app">
     <section class="greetings">
-      <h2 class="title">
+      <h2 class="title" v-if="$auth.isAuthenticated">
         Hello,
-        <input
-          type="text"
-          placeholder="your name"
-          v-model="name"
-          class="title-name"
-        />
+        {{ $auth.user.name }}
       </h2>
     </section>
     <section class="create-todo">

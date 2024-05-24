@@ -29,7 +29,9 @@ button {
   cursor: initial;
   color: inherit;
 }
-
+.title-name {
+  font-size: 24px;
+}
 body {
   background: var(--light);
   color: var(--dark);
